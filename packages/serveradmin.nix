@@ -127,6 +127,5 @@ python3Packages.buildPythonPackage rec {
     homepage = https://github.com/innogames/serveradmin;
     license = licenses.mit;
     maintainers = with maintainers; [ seqizz ] ;
-    platforms = platforms.linux;
   };
 }
