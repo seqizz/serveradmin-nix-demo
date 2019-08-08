@@ -14,6 +14,7 @@
 }:
 
 let
+  python = python3Packages.python;
   configText = ''
   """Serveradmin configuration
 
@@ -115,8 +116,7 @@ python3Packages.buildPythonPackage rec {
   propagatedBuildInputs = pythonPath;
 
   postInstall = ''
-    mkdir -p $out/etc/serveradmin
-    tee -a $out/etc/serveradmin/settings.py < ${(writeText "config.serveradmin" configText)}
+    tee -a $out/lib/${python.libPrefix}/site-packages/serveradmin/local_settings.py < ${(writeText "config.serveradmin" configText)}
   '';
 
   doInstallCheck = false;

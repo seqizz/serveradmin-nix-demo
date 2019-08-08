@@ -88,5 +88,4 @@ in
       ];
     };
   };
-  environment.etc."serveradmin/settings.py".source = "${pkgs.pythonServeradmin}/etc/serveradmin/settings.py";
 }
